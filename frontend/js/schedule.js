@@ -1,7 +1,7 @@
 async function loadSessions(){
   const token = localStorage.getItem('token');
   try{
-    const res = await fetch('http://localhost:4000/api/sessions', { headers: { Authorization: 'Bearer '+token }});
+    const res = await fetch('/api/sessions', { headers: { Authorization: 'Bearer '+token }});
     const list = await res.json();
     const body = document.getElementById('sessionBody');
     body.innerHTML = '';
@@ -19,7 +19,7 @@ document.getElementById('sessionForm').addEventListener('submit', async e=>{
   const start = document.getElementById('sstart').value;
   const end = document.getElementById('send').value;
   try{
-    const res = await fetch('http://localhost:4000/api/sessions', {
+    const res = await fetch('/api/sessions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: 'Bearer '+token },
       body: JSON.stringify({ name, startTime: start, endTime: end })
