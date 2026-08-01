@@ -6,7 +6,7 @@ document.getElementById("reviewForm").addEventListener("submit", async e => {
   const comments = document.getElementById("comments").value;
   const finalize = document.getElementById("finalize").checked;
   try {
-    const res = await fetch("http://localhost:4000/api/reviews/submit", {
+    const res = await fetch("/api/reviews/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: "Bearer " + token },
       body: JSON.stringify({ paperId, score, comments, finalize }),
