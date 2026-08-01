@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — ResearchNest</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="section-muted" onload="requireAuth()">
+<nav class="navbar navbar-expand-lg navbar-dark hero-gradient">
+  <div class="container">
+    <a class="navbar-brand" href="dashboard.html">ResearchNest</a>
+    <div class="ms-auto text-white">
+      <span id="nav-role"></span> • <span id="nav-name"></span>
+      <button class="btn btn-light btn-sm ms-3" onclick="logout()">Logout</button>
+    </div>
+  </div>
+</nav>
+<header class="text-center py-4"><h2 class="fw-bold">Your Dashboard</h2><p class="text-muted">Choose what you want to do today</p></header>
+<div class="container pb-5">
+  <div class="row g-4">
+    <div class="col-md-4 role-author"><div class="card card-soft p-4 h-100"><h5>Submit Paper</h5><p>Upload PDF with title, abstract & keywords.</p><a href="submit.html" class="btn btn-primary btn-glow">Open</a></div></div>
+    <div class="col-md-4 role-author"><div class="card card-soft p-4 h-100"><h5>My Submissions</h5><p>See your papers, statuses, and files in one place.</p><a href="mysubmissions.html" class="btn btn-primary btn-glow">Open</a></div></div>
+    <div class="col-md-4 role-author"><div class="card card-soft p-4 h-100"><h5>Certificates</h5><p>Download presentation certificates for accepted papers.</p><a href="certificates.html" class="btn btn-primary btn-glow">Open</a></div></div>
+    <div class="col-md-4 role-reviewer"><div class="card card-soft p-4 h-100"><h5>Reviewer Panel</h5><p>Submit & finalize reviews for assigned papers.</p><a href="reviewer.html" class="btn btn-primary btn-glow">Open</a></div></div>
+    <div class="col-md-4 role-admin"><div class="card card-soft p-4 h-100"><h5>Assign Reviewers</h5><p>Map reviewers to papers and avoid duplicates.</p><a href="admin.html" class="btn btn-primary btn-glow">Open</a></div></div>
+    <div class="col-md-4 role-admin"><div class="card card-soft p-4 h-100"><h5>Schedule Management</h5><p>Create sessions with conflict detection; publish schedule.</p><a href="schedule.html" class="btn btn-primary btn-glow">Open</a></div></div>
+  </div>
+</div>
+<script src="js/auth.js"></script>
+<script>
+  const u = getUser(); const role = u.role||'author';
+  const show = (cls, ok) => document.querySelectorAll('.'+cls).forEach(n=> n.style.display = ok?'block':'none');
+  document.getElementById('nav-role').textContent = role;
+  document.getElementById('nav-name').textContent = u.name || u.email || 'User';
+  show('role-author', role==='author');
+  show('role-reviewer', role==='reviewer');
+  show('role-admin', role==='admin' || role==='chair');
+</script>
+</body>
+</html>

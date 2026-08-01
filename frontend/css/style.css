@@ -1,0 +1,17 @@
+:root{ --brand:#4F46E5; --brand-2:#7C3AED; }
+body{ font-family: 'Poppins', Arial, sans-serif; }
+.hero-gradient{ background: radial-gradient(75% 75% at 25% 15%, rgba(124,58,237,.25), transparent 60%), linear-gradient(90deg, var(--brand), var(--brand-2)); }
+.navbar-brand{ font-weight:700; letter-spacing:.5px; }
+.btn-glow{ box-shadow:0 8px 20px rgba(79,70,229,.4); transition:.2s; }
+.btn-glow:hover{ transform:translateY(-2px); box-shadow:0 12px 28px rgba(79,70,229,.5); }
+.card-soft{ border:none; box-shadow:0 6px 20px rgba(0,0,0,.06); border-radius:1rem; }
+.section-muted{ background:#f8fafc; }
+footer a{ color:#cbd5e1; text-decoration:none; } footer a:hover{ color:#fff; }
+.hidden{ display:none !important; }
+/* Gradient status chips */
+.badge-chip{ border-radius:999px; padding:.35rem .7rem; font-weight:600; font-size:.8rem; color:#fff; display:inline-block; }
+.badge-submitted{ background: linear-gradient(90deg,#64748b,#94a3b8); }
+.badge-underreview{ background: linear-gradient(90deg,#2563eb,#6366f1); }
+.badge-accepted{ background: linear-gradient(90deg,#16a34a,#22c55e); }
+.badge-rejected{ background: linear-gradient(90deg,#dc2626,#ef4444); }
+.badge-cameraready{ background: linear-gradient(90deg,#7c3aed,#a855f7); }

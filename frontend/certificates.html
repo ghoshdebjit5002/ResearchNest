@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificates — ResearchNest</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="section-muted" onload="requireAuth();">
+<nav class="navbar navbar-expand-lg navbar-dark hero-gradient"><div class="container"><a class="navbar-brand" href="dashboard.html">ResearchNest</a><button class="btn btn-light btn-sm ms-auto" onclick="logout()">Logout</button></div></nav>
+<div class="container py-5">
+  <div class="col-md-6 mx-auto card card-soft p-4">
+    <h2 class="text-success mb-3">Download Certificate</h2>
+    <form id="certForm">
+      <input type="number" id="paperId" class="form-control mb-3" placeholder="Paper ID" required>
+      <button class="btn btn-success btn-glow w-100">Download Certificate</button>
+    </form>
+  </div>
+</div>
+<script src="js/auth.js"></script>
+<script src="js/certificates.js"></script>
+</body>
+</html>
