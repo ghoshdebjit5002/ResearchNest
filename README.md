@@ -326,7 +326,7 @@ https://github.com/ghoshdebjit5002
 
 ### LinkedIn
 
-*Add your LinkedIn profile here.*
+https://www.linkedin.com/in/debjit-ghosh-aa2964280
 
 ---
 
