@@ -4,7 +4,7 @@ document.getElementById("assignForm").addEventListener("submit", async e => {
   const paperId = document.getElementById("paperId").value;
   const reviewerId = document.getElementById("reviewerId").value;
   try {
-    const res = await fetch("http://localhost:4000/api/admin/assign", {
+    const res = await fetch("/api/admin/assign", {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: "Bearer " + token },
       body: JSON.stringify({ paperId, reviewerId }),
@@ -19,7 +19,7 @@ document.getElementById("decisionForm").addEventListener("submit", async e => {
   const decision = document.getElementById("decision").value;
   const adminComment = document.getElementById("adminComment").value;
   try {
-    const res = await fetch("http://localhost:4000/api/admin/decision", {
+    const res = await fetch("/api/admin/decision", {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: "Bearer " + token },
       body: JSON.stringify({ paperId, decision, adminComment }),
