@@ -5,7 +5,7 @@ document.getElementById("registerForm").addEventListener("submit", async e => {
   const password = document.getElementById("password").value;
   const role = document.querySelector("input[name='role']:checked").value;
   try {
-    const res = await fetch("http://localhost:4000/api/auth/register", {
+    const res = await fetch("/api/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password, role })
