@@ -11,7 +11,7 @@ document.getElementById("submitForm").addEventListener("submit", async e => {
   form.append("keywords", keywords);
   form.append("paper", paperFile);
   try {
-    const res = await fetch("http://localhost:4000/api/papers/submit", {
+    const res = await fetch("/api/papers/submit", {
       method: "POST",
       headers: { Authorization: "Bearer " + token },
       body: form
