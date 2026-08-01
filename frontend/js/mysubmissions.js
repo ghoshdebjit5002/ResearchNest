@@ -2,7 +2,7 @@ async function loadMyPapers(){
   const token = localStorage.getItem('token');
   const body = document.getElementById('paperBody');
   try{
-    const res = await fetch('http://localhost:4000/api/papers/mine',{ headers:{ Authorization:'Bearer '+token }});
+    const res = await fetch('/api/papers/mine',{ headers:{ Authorization:'Bearer '+token }});
     const list = await res.json();
     body.innerHTML='';
     if(!Array.isArray(list) || list.length===0){ body.innerHTML = '<tr><td colspan="5" class="text-muted">No submissions yet.</td></tr>'; return; }
